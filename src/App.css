@@ -1,5 +1,47 @@
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch; /* Stretch to take full height */
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+.recipe-list {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  margin-right: 10px;
+  border-radius: 5px;
+  height: 100vh;
+}
+
+.recipe-list > ul {
+  margin: 0;
+  padding: 0;
+}
+
+.recipe-details {
+  flex: 2;
+  padding: 20px;
+  border-radius: 5px;
+  height: 100vh;
+}
+
+.recipe-list-item {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.recipe-list-item.hovered {
+  background-color: #e1e8f0; /* Light blue background when hovered */
+}
+
+.recipe-list-item:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .App-logo {

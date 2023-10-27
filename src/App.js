@@ -1,5 +1,6 @@
-import React from "react";
-
+import React, { useState } from "react";
+import RecipeList from "./components/RecipeList";
+import RecipeDetail from "./components/RecipeDetail";
 import "./App.css";
 
 const recipes = [
@@ -16,7 +17,18 @@ const recipes = [
 ];
 
 function App() {
-  return <div className="App">Let's add some content here</div>;
+  const [selectedRecipe, setSelectedRecipe] = useState(null);
+
+  const handleRecipeClick = (recipe) => {
+    setSelectedRecipe(recipe);
+  };
+
+  return (
+    <div className="App">
+      <RecipeList recipes={recipes} onRecipeClick={handleRecipeClick} />
+      <RecipeDetail selectedRecipe={selectedRecipe} />
+    </div>
+  );
 }
 
 export default App;
